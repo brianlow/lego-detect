@@ -6,3 +6,5 @@ data
 runs
 tmp
 .env
+ .ipynb_checkpoints
+yolov8?.pt
