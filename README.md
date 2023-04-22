@@ -21,3 +21,4 @@ python predict.py
 
 Training on 1800k rendered images -> only good at predicting rendered images
 Training on 10 real photos with 10 blocks each -> pretty good!
+Training on classification dataset + mosaic -> meh
