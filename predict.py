@@ -5,7 +5,8 @@ from ultralytics import YOLO
 import cv2
 from PIL import Image
 
-model = YOLO('detect-06-10-classes-2k-images-paperspace2.pt')
+# model = YOLO('detect-06-10-classes-2k-images-paperspace2.pt')
+model = YOLO('runs/detect/detect-05-sample-real3/weights/best.pt')
 
 # loop through files in the /samples folder
 for filename in os.listdir("./samples"):

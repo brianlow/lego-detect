@@ -67,6 +67,7 @@ data_dir = Path('/storage' if is_paperspace else './data')
 if not os.path.exists(data_dir):
   os.makedirs(data_dir)
 
+# from https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0
 # download https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0/download to a zip
 with zipfile.ZipFile(data_dir / 'final_dataset_lego_detection.zip', 'r') as zip_ref:
     zip_ref.extractall(data_dir)
@@ -78,6 +79,8 @@ convert_voc_to_yolo(voc_path, yolo_path, val_split)
 
 # Output a dataset yaml file
 with open(data_dir / 'dataset.yml', 'w') as f:
+  f.write(f"# Path must be an absolute path unless it is Ultralytics standard location\n")
+  f.write(f"path: {os.path.abspath(data_dir / 'dataset')}\n")
   f.write(f"train: train/images\n")
   f.write(f"val: val/images\n")
   f.write(f"\n")

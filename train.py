@@ -6,16 +6,17 @@
 # !pip uninstall --yes protobuf tensorboard tensorflow
 # !pip install ultralytics protobuf onnx comet_ml
 
-import comet_ml
-comet_ml.init(project_name='detect-04-10-classes-2k-images')
+experiment_name = "detect-05-sample-real"
 
+import comet_ml
+comet_ml.init(project_name=experiment_name)
 
 import sys
-sys.path.append('../ultralytics')
+# sys.path.append('../ultralytics')
 from ultralytics import YOLO
 
 # Load a model
 model = YOLO('yolov8m.pt')  # load a pretrained model (recommended for training)
 
 # Train the model
-model.train(data=f"../lego-rendering/renders/dataset.yaml", name="detect-04-10-classes-2k-images", epochs=300, close_mosaic=10, imgsz=244, hsv_h=0.25, shear=0)
+model.train(data=f"./data/dataset.yml", name=experiment_name, epochs=300, hsv_h=0.25, shear=0)
