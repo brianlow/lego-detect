@@ -9,10 +9,10 @@ python -m pip install -r requirements.txt
 # need to manually download the dataset for the time being (see setup.py)
 python setup.py
 
-# see results in runs/, if good copy path to weights/best.pt
+# see results in ./runs, if good copy path to weights/best.pt
 python train.py
 
-# update predict.py with best weights and see results in tmp/
+# update predict.py with best weights, put images in ./samples, run script and see results in ./tmp
 python predict.py
 ```
 
