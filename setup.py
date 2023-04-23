@@ -101,8 +101,22 @@ for voc_path in voc_paths:
     yolo_path = os.path.join(data_dir, "dataset")
     convert_voc_to_yolo(voc_path, yolo_path, val_split)
 
+
+# Include some rendered images from the lego-render project
+# for now do this step manully
+# cp -r ../lego-rendering/renders/dataset/* data/dataset
+
 # Output a dataset yaml file
 with open(data_dir / 'dataset.yaml', 'w') as f:
+  f.write(f"# Lego Detection Dataset\n")
+  f.write(f"# \n")
+  f.write(f"# Includes:\n")
+  f.write(f"#     - roughly 2k real photos with 1 to 10 parts per picture, from:\n")
+  f.write(f"#       https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0\n")
+  f.write(f"#       ")
+  f.write(f"#     - roughly 2k rendered parts, with 1k most common parts, two images per part, from:\n")
+  f.write(f"#       the lego-renders repo\n")
+  f.write(f"#\n")
   f.write(f"# Path must be an absolute path unless it is Ultralytics standard location\n")
   f.write(f"path: {os.path.abspath(data_dir / 'dataset')}\n")
   f.write(f"train: train/images\n")
