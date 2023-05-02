@@ -71,6 +71,7 @@ python predict.py
 
 ![sample predictions 1](./docs/val_batch0_pred.jpg)
 ![sample predictions 2](./docs/val_batch1_pred.jpg)
+![sample predictions 2](./docs/detect-10-4k-real-and-renders-nano-1024-image-size2-results.png)
 
 
 Some notes
