@@ -37,7 +37,7 @@ or generate your own with scripts in this repo. The most recent dataset
 
 1. Download https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0
 2. Save to `data/final_dataset_lego_detection.zip`
-3. Generate ~2k images with my `lego-rendering` repo
+3. Generate ~2k images with [brianlow/lego-rendering](https://github.com/brianlow/lego-rendering) repo, checkout commit `bf24d04`
 4. `python dataset.py`
 
 
