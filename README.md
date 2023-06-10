@@ -25,7 +25,16 @@ or generate your own with scripts in this repo. The most recent dataset
 
 
 
-### Downloading the dataset
+### Optionally get the dataset on Paperspace.com
+
+```
+aws s3 cp datasets/lego-detect-11-aruco.zip s3://brian-lego-public/lego-detect/
+wget https://brian-lego-public.s3.us-west-1.amazonaws.com/lego-detect/lego-detect-11-aruco.zip
+```
+
+# train
+python train.py
+
 
 1. Download [lego-detect-4k.zip](https://brian-lego-public.s3.us-west-1.amazonaws.com/lego-detect/lego-detect-4k.zip) and save to `./data`
 2. Unzip

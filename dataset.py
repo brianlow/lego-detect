@@ -86,7 +86,7 @@ random.seed(1)
 #  ./data   - when running locally
 #  /storage - when running on Paperspace
 is_paperspace = os.environ.get('PAPERSPACE_CLUSTER_ID') is not None
-data_dir = Path('/storage' if is_paperspace else './data')
+data_dir = Path('/storage' if is_paperspace else './dataset')
 if not os.path.exists(data_dir):
   os.makedirs(data_dir)
 

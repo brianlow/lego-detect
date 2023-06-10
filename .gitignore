@@ -2,7 +2,7 @@
 node_modules
 tmp
 lightning_logs
-data
+datasets
 runs
 tmp
 .env
