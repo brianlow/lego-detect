@@ -7,10 +7,21 @@ asdf install
 python -m pip install -r requirements.txt
 ```
 
-## Dataset
 
-To train the model, we first need a dataset. You can download the dataset I used to train
-or generate your own with scripts in this repo. The most recent dataset
+## Dataset generation and training process
+
+```
+- Update the dataset name by searching and replacing across files
+- Update the experiment name (optional)
+- `python dataset.py`
+- `python dataset-upload.py`
+- `git commit ...` (use the dataset name as the commit msg)
+- In Paperspace
+  - `git pull`
+  - `source /storage/go.sh`  (install pip dependencies and set CometML API keys)
+  - `python train.py`
+
+```
 
 ### Dataset Details
 
@@ -23,41 +34,6 @@ or generate your own with scripts in this repo. The most recent dataset
   - https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0
 - Synthetic images rendered with my `lego-rendering` repo
 
-
-
-### Optionally get the dataset on Paperspace.com
-
-```
-aws s3 cp datasets/lego-detect-11-aruco.zip s3://brian-lego-public/lego-detect/
-wget https://brian-lego-public.s3.us-west-1.amazonaws.com/lego-detect/lego-detect-11-aruco.zip
-```
-
-# train
-python train.py
-
-
-1. Download [lego-detect-4k.zip](https://brian-lego-public.s3.us-west-1.amazonaws.com/lego-detect/lego-detect-4k.zip) and save to `./data`
-2. Unzip
-3. You should now have `./data/dataset.yaml` along with a `./data/dataset` folder containing the images
-4. Edit `./data/dataset.yaml` and change the path to match your environment (for some reason Ultralytics requires absolute paths)
-
-
-### Generate a training dataset
-
-1. Download https://mostwiedzy.pl/en/open-research-data/tagged-images-with-lego-bricks,209111650250426-0
-2. Save to `data/final_dataset_lego_detection.zip`
-3. Generate ~2k images with [brianlow/lego-rendering](https://github.com/brianlow/lego-rendering) repo, checkout commit `bf24d04`
-4. `python dataset.py`
-
-
-## Training
-
-```bash
-# Edit `train.py` and change the experiment name
-# This this script. Results will be in the `./runs` folder.
-# If the results are good, note the path to `weights/best.pt`
-python train.py
-```
 
 
 ## Predicting

@@ -13,8 +13,8 @@ from pathlib import Path
 # export COMET_API_KEY=<your key if you want to report to comet.com>
 # pip install -r requirements.txt!
 
-experiment_name = "lego-detect-11-aruco"
-dataset_name = "lego-detect-11-aruco"
+experiment_name = "lego-detect-12-4k-new-rendering"
+dataset_name = "lego-detect-12-4k-new-rendering"
 
 comet_ml.init(project_name=experiment_name)
 
@@ -41,4 +41,4 @@ if not os.path.exists(dataset_dir):
 model = YOLO('yolov8n.pt')  # yolo8s and yolo8m achieved similar accuracy
 
 # Train the model
-model.train(data=f"{dataset_dir}/{dataset_name}.yaml", name=experiment_name, epochs=300, batch=-1, hsv_h=0.25, shear=0)
+model.train(data=f"{data_dir}/{dataset_name}.yaml", name=experiment_name, epochs=300, batch=-1, hsv_h=0.25, shear=0)
