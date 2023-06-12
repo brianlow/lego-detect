@@ -13,8 +13,8 @@ from pathlib import Path
 # export COMET_API_KEY=<your key if you want to report to comet.com>
 # pip install -r requirements.txt!
 
-experiment_name = "lego-detect-12-4k-new-rendering"
-dataset_name = "lego-detect-12-4k-new-rendering"
+experiment_name = "lego-detect-13-7k-more-negatives"
+dataset_name = "lego-detect-13-7k-more-negatives"
 
 comet_ml.init(project_name=experiment_name)
 

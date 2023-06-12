@@ -10,7 +10,8 @@ os.makedirs("tmp", exist_ok=True)
 # model = YOLO('runs/detect/detect-05-sample-real3/weights/best.pt')
 # model = YOLO('detect-07-4k-real-and-renders.pt')
 # model = YOLO('detect-08-4k-real-and-renders-small.pt')
-model = YOLO('detect-10-4k-real-and-renders-nano-1024-image-size2.pt')
+# model = YOLO('detect-10-4k-real-and-renders-nano-1024-image-size2.pt')
+model = YOLO('lego-detect-13-7k-more-negatives2.pt')
 
 # loop through files in the /samples folder
 for filename in os.listdir("./samples"):

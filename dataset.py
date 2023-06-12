@@ -13,7 +13,7 @@ from pathlib import Path
 import random
 import shutil
 
-dataset_name = "lego-detect-12-4k-new-rendering"
+dataset_name = "lego-detect-13-7k-more-negatives"
 
 dataset_path = os.path.join("./datasets", dataset_name)
 dataset_yaml = f"datasets/{dataset_name}.yaml"
